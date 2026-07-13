@@ -1,0 +1,37 @@
+# ========================
+# Core dependencies for SpaMCAR
+# ========================
+
+# PyTorch ecosystem (install manually matching your CUDA version)
+# torch==2.2.2+cu118
+# torch_geometric==2.5.2
+# torch_cluster==1.6.3+pt22cu118
+# torch_scatter==2.1.2+pt22cu118
+# torch_sparse==0.6.18+pt22cu118
+
+# Data & scientific computing
+numpy>=1.26
+scipy>=1.13
+pandas>=2.2
+scanpy>=1.10
+anndata
+
+# Machine learning
+scikit-learn>=1.4
+faiss-cpu>=1.8
+
+# Graph & spatial
+squidpy>=1.4
+POT>=0.9
+harmonypy>=0.0.9
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+
+# Utilities
+PyYAML>=6.0
+tqdm>=4.66
+
+# R interface (for mclust clustering)
+rpy2>=3.5
