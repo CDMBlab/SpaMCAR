@@ -6,18 +6,33 @@ Spatial transcriptomics enables high-throughput gene expression profiling while 
 
 ## Datasets
 
-| # | Dataset | Script | Config | Platform | Spots | Genes | Domains | Source |
-|---|---------|--------|--------|----------|-------|-------|---------|--------|
-| 1 | Human Breast Cancer (HBC) | `breast_cancer.py` | `Config/HBC.yaml` | 10x Visium | 3,798 | 36,601 | 20 | [10x Genomics](https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Breast_Cancer_Block_A_Section_1) |
-| 2 | Human DLPFC | — | — | Visium | 151,676 | — | — | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
-| 3 | Mouse Hypothalamus | — | — | MERFISH | 5,488–5,926 | — | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
-| 4 | Mouse Primary Visual Area | — | — | BaristaSeq | 4,489 | 79 | 7 | [SpaceTx](https://spacetx.github.io/data.html) |
-| 5 | Mouse Embryo | — | — | Stereo-seq | — | — | >10 | [STOmics](https://db.cngb.org/stomics/mosta/) |
-| 6 | Mouse Visual Cortex | — | — | STARmap | — | — | — | [Google Drive](https://drive.google.com/drive/folders/1I1nxheWlc2RXSdiv24dex3YRaEh780my?usp=sharing) |
-| 7 | Mouse Brain Anterior (MBA) | `mouse brain anterior.py` | `Config/MBA.yaml` | 10x Visium | — | — | 52 | [10x Genomics](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-anterior-1-standard-1-1-0) |
-| 8 | Mouse Brain Sagittal (MBS) | `MBS.PY` | `Config/MBS.yaml` | 10x Visium | — | — | 8 | [10x Genomics](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-posterior-1-standard-1-0-0) |
-
-Additional: Human Melanoma dataset — [ScribbleDom](https://github.com/1alnoman/ScribbleDom/tree/master/preprocessed_data/cancers/Melanoma)
+| Platform | Dataset | Tissue / Section | Spots | Genes | Domains | Source / Reference |
+|---|---|---|---:|---:|---:|---|
+| 10x Visium | Human Breast Cancer (HBC) | — | 3,798 | 36,601 | 20 | [10x Genomics](https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Breast_Cancer_Block_A_Section_1) |
+| 10x Visium | Human Melanoma (HM) | — | 293 | 16,148 | — | [ScribbleDom](https://github.com/1alnoman/ScribbleDom/tree/master/preprocessed_data/cancers/Melanoma) |
+| 10x Visium | Mouse Brain Anterior | — | 2,695 | 32,285 | 52 | [10x Genomics](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-anterior-1-standard-1-1-0) |
+| 10x Visium | Mouse Brain Posterior | — | 3,353 | 31,053 | 8 | [10x Genomics](https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-posterior-1-standard-1-0-0) |
+| 10x Visium | Human DLPFC | 151507 | 4,221 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151508 | 4,381 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151509 | 4,788 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151510 | 4,595 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151669 | 3,636 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151670 | 3,484 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151671 | 4,093 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151672 | 3,888 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151673 | 3,611 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151674 | 3,635 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151675 | 3,566 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| 10x Visium | Human DLPFC | 151676 | 3,431 | 36,601 | 6–8 (per section) | [spatialLIBD](https://github.com/LieberInstitute/spatialLIBD) |
+| MERFISH | Mouse Hypothalamus | Bregma -0.045 | 488 | 1,558 | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
+| MERFISH | Mouse Hypothalamus | Bregma -0.095 | 557 | 155 | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
+| MERFISH | Mouse Hypothalamus | Bregma -0.145 | 926 | 155 | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
+| MERFISH | Mouse Hypothalamus | Bregma -0.195 | 803 | 155 | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
+| MERFISH | Mouse Hypothalamus | Bregma -0.245 | 543 | 155 | 8 | [Dryad](https://datadryad.org/stash/dataset/doi:10.5061/dryad.8t8s248) |
+| BaristaSeq | Mouse Primary Visual Area | — | 4,489 | 797 | 7 | [SpaceTx](https://spacetx.github.io/data.html) |
+| Stereo-seq | Mouse Embryo | E9.5 | 5,913 | 25,568 | >10 | [STOmics](https://db.cngb.org/stomics/mosta/) |
+| Stereo-seq | Mouse Embryo | E10.5 | 18,408 | 25,201 | >10 | [STOmics](https://db.cngb.org/stomics/mosta/) |
+| STARmap | Mouse Visual Cortex | — | 1,207 | 1,020 | — | [Google Drive](https://drive.google.com/drive/folders/1I1nxheWlc2RXSdiv24dex3YRaEh780my?usp=sharing) |
 
 ## Setup
 
@@ -43,8 +58,8 @@ Each script loads its corresponding config from `Config/`, runs the full SpaMCAR
 ## Project Structure
 
 ```
-├── breast_cancer.py          # HBC main training script
-├── mouse brain anterior.py   # MBA main training script
+├── HBC.py          # HBC main training script
+├── MBA.py   # MBA main training script
 ├── MBS.PY                    # MBS main training script
 ├── SpaMCAR/                  # Core model package
 │   ├── __init__.py
