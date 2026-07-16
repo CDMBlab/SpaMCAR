@@ -1,8 +1,8 @@
-# SpaMCAR: Spatially Guided Multi-scale Comparative Alignment and Dual-Reconstruction Framework
+# SpaMCAR: A Masked Autoencoder with Multiscale Feature Enhancement and Boundary-Aware Contrastive Learning for Spatial Transcriptomics Analysis
 
 ## Introduction
 
-Spatial transcriptomics enables high-throughput gene expression profiling while preserving in situ spatial context, making it a powerful tool for characterizing tissue spatial heterogeneity. As a key task, spatial domain identification aims to partition functionally coherent regions based on expression patterns and spatial neighborhood relationships. However, existing methods are still limited by insufficient exploitation of multiscale spatial information, inadequate preservation of topological structure, and unreliable contrastive supervision in complex boundary regions. To address these challenges, we propose SpaMCAR, a spatially guided multi-scale comparative alignment and dual-reconstruction framework. SpaMCAR integrates spatially guided feature enhancement, dual reconstruction of gene expression and spatial topology, and a local–global contrastive learning module with boundary-aware resampling and hard negative mining, enabling effective modeling of multi-level spatial dependencies while preserving structural consistency. Specifically, SpaMCAR fuses gene expression profiles, multi-scale spatial encodings, and local convolutional features to construct a unified multiscale representation capturing both molecular and structural information. A dual reconstruction mechanism is then introduced to jointly recover masked gene expression and spatial adjacency relationships, enforcing consistency in both feature space and graph topology. Finally, a boundary-aware contrastive learning strategy dynamically constructs reliable contrastive pairs by integrating local spatial consistency and global cross-cluster similarity, while mining hard negatives and adaptively refining ambiguous boundary regions, thereby enhancing discrimination across heterogeneous tissue domains. Extensive experiments on multiple public datasets demonstrate that SpaMCAR consistently improves spatial domain clustering accuracy and tissue structure reconstruction, and outperforms state-of-the-art methods in downstream biological interpretability.
+Spatial transcriptomics is an emerging technology that enables spatially resolved measurement of gene expression profiles while preserving tissue spatial organization, providing insights into tissue heterogeneity. A central task in spatial transcriptomics analysis is spatial domain identification, which aims to partition tissues into biologically meaningful spatial regions by jointly leveraging gene expression patterns and spatial neighborhood relationships. However, existing methods remain limited in their ability to exploit multiscale spatial information, preserve spatial topology, and provide reliable contrastive supervision in complex boundary regions. To address these challenges, we propose SpaMCAR, a masked autoencoder with multiscale feature enhancement and boundary-aware contrastive learning for spatial transcriptomics analysis. SpaMCAR integrates gene expression profiles, multi-frequency positional encodings, and local convolutional features to construct enhanced representations that capture molecular and spatial structural information. Subsequently, a masked dual-reconstruction strategy is designed to jointly recover gene expression features and spatial adjacency structures, thereby enforcing consistency between feature representations and graph topology. Furthermore, SpaMCAR proposes a boundary-aware contrastive learning strategy that dynamically constructs informative contrastive pairs by leveraging local spatial consistency and global cross-cluster similarity, while incorporating hard negative mining and adaptive boundary resampling to improve boundary delineation in ambiguous tissue regions. Extensive experiments on multiple public datasets demonstrate that SpaMCAR consistently improves spatial domain identification accuracy and spatial topology preservation, outperforming state-of-the-art methods and providing enhanced biological interpretability for downstream analyses.
 
 ## Datasets
 
@@ -45,12 +45,6 @@ pip install -r requirement.txt
 ```bash
 # Human breast cancer
 python HBC.py
-
-# Mouse brain anterior
-python "MBA.py"
-
-# Mouse brain sagittal
-python MBS.PY
 ```
 
 Each script loads its corresponding config from `Config/`, runs the full SpaMCAR pipeline (preprocessing → multi-scale feature extraction → graph construction → training → clustering), and saves results to `./result/`.
@@ -59,8 +53,6 @@ Each script loads its corresponding config from `Config/`, runs the full SpaMCAR
 
 ```
 ├── HBC.py          # HBC main training script
-├── MBA.py   # MBA main training script
-├── MBS.PY                    # MBS main training script
 ├── SpaMCAR/                  # Core model package
 │   ├── __init__.py
 │   ├── Func.py               # Data preprocessing & graph construction
@@ -69,8 +61,6 @@ Each script loads its corresponding config from `Config/`, runs the full SpaMCAR
 │   └── Utils.py              # Clustering metrics & label refinement
 ├── Config/                   # Dataset-specific configuration
 │   ├── HBC.yaml
-│   ├── MBA.yaml
-│   └── MBS.yaml
 └── result/                   # Output directory (created at runtime)
 ```
 
